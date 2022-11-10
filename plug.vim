@@ -33,6 +33,9 @@ if has("nvim")
   " Or build from source code by using yarn: https://yarnpkg.com
   " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
   Plug 'github/copilot.vim'
+  Plug 'williamboman/mason.nvim'
+  Plug 'williamboman/mason-lspconfig.nvim'
+  Plug 'simrat39/rust-tools.nvim' " this works with mason, lspconfig to provide rust analyzer
 
 endif
 
