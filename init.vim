@@ -9,6 +9,7 @@ scriptencoding utf-8
 if !1 | finish | endif
 
 set nocompatible
+set relativenumber
 set number
 syntax enable
 set fileencodings=utf-8,sjis,euc-jp,latin
@@ -18,6 +19,7 @@ set autoindent
 set background=dark
 set nobackup
 set hlsearch
+set clipboard=unnamedplus
 set showcmd
 set cmdheight=1
 set laststatus=2
@@ -80,6 +82,12 @@ augroup BgHighlight
   autocmd!
   autocmd WinEnter * set cul
   autocmd WinLeave * set nocul
+augroup END
+
+" highlight on Yank
+augroup YankHighlight
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank()
 augroup END
 
 if &term =~ "screen"

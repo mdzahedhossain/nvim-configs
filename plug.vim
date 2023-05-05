@@ -16,6 +16,7 @@ Plug 'mlaursen/vim-react-snippets'
 " Install nvim-lspconfig
 if has("nvim")
   Plug 'neovim/nvim-lspconfig'
+  " Plug 'kabouzeid/nvim-lspinstall'
   " Plug 'glepnir/lspsaga.nvim'
   Plug 'tami5/lspsaga.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -36,7 +37,18 @@ if has("nvim")
   Plug 'williamboman/mason.nvim'
   Plug 'williamboman/mason-lspconfig.nvim'
   Plug 'simrat39/rust-tools.nvim' " this works with mason, lspconfig to provide rust analyzer
+  Plug 'nvim-neorg/neorg'
+  Plug 'ThePrimeagen/harpoon'
 
+  Plug 'beauwilliams/focus.nvim'
+  
+  " Markdown related
+  Plug 'ellisonleao/glow.nvim'
+
+  Plug 'kkharji/sqlite.lua' | Plug 'nvim-telescope/telescope-frecency.nvim'
+
+  " https://github.com/nvim-telescope/telescope-arecibo.nvim
+  Plug 'nvim-telescope/telescope-arecibo.nvim'
 endif
 
 call plug#end()

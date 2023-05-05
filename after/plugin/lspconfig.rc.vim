@@ -68,6 +68,7 @@ local on_attach = function(client, bufnr)
   }
 end
 
+-- For more info see -> https://github.com/neovim/nvim-lspconfig
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" }
@@ -77,6 +78,16 @@ nvim_lsp.dockerls.setup {
   on_attach = on_attach,
   cmd = {"docker-langserver", "--stdio"},
   filetypes = {"dockerfile"}
+}
+
+nvim_lsp.groovyls.setup {
+  on_attach = on_attach,
+  cmd = { "java", "jar", "/home/mdzahedhossain/Development/groovy-language-server/build/libs/groovy-language-server-all.jar" }
+}
+
+
+nvim_lsp.arduino_language_server.setup {
+  on_attach = on_attach
 }
 
 EOF
