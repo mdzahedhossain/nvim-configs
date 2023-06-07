@@ -12,10 +12,10 @@ Plug 'preservim/nerdtree'
 
 Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
+Plug 'jparise/vim-graphql'
 
 " Install nvim-lspconfig
 if has("nvim")
-  Plug 'neovim/nvim-lspconfig'
   " Plug 'glepnir/lspsaga.nvim'
   Plug 'tami5/lspsaga.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -33,9 +33,14 @@ if has("nvim")
   " Or build from source code by using yarn: https://yarnpkg.com
   " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
   Plug 'github/copilot.vim'
-  Plug 'williamboman/mason.nvim'
+  Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
   Plug 'williamboman/mason-lspconfig.nvim'
+  Plug 'neovim/nvim-lspconfig'
   Plug 'simrat39/rust-tools.nvim' " this works with mason, lspconfig to provide rust analyzer
+  Plug 'beauwilliams/focus.nvim'
+  Plug 'ThePrimeagen/harpoon'
+  Plug 'OmniSharp/omnisharp-vim'
+  Plug 'mfussenegger/nvim-jdtls'
 
 endif
 

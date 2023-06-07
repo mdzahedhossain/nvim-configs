@@ -10,6 +10,7 @@ if !1 | finish | endif
 
 set nocompatible
 set number
+set relativenumber
 syntax enable
 set fileencodings=utf-8,sjis,euc-jp,latin
 set encoding=utf-8
@@ -82,6 +83,12 @@ augroup BgHighlight
   autocmd WinLeave * set nocul
 augroup END
 
+" Highligh on Yank
+augroup YankHighlight
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+augroup END
+
 if &term =~ "screen"
   autocmd BufEnter * if bufname("") !~ "^?[A-Za-z0-9?]*://" | silent! exe '!echo -n "\ek[`hostname`:`basename $PWD`/`basename %`]\e\\"' | endif
   autocmd VimLeave * silent!  exe '!echo -n "\ek[`hostname`:`basename $PWD`]\e\\"'
@@ -113,6 +120,7 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
 " Imports "{{{
 " ---------------------------------------------------------------------
+
 runtime ./plug.vim
 if has("unix")
   let s:uname = system("uname -s")
@@ -152,8 +160,23 @@ endif
 set exrc
 "}}}
 
-let g:python3_host_prog = '/usr/bin/python3'
+" change this python3 for OS
+let g:python3_host_prog = '/opt/homebrew/bin/python3'
 let g:UltiSnipsExpandTrigger='<c-space>'
+let g:OmniSharp_server_path = '/home/zhossain/Development/omnisharp-http-unity/run'
 
 
 " vim: set foldmethod=marker foldlevel=0:
+let mapleader = ','
+
+" " Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" " Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P

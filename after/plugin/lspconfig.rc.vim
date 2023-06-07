@@ -12,7 +12,7 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   local opts = { noremap = true, silent = true }
-  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'gz', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 
   --- In lsp attach function
   -- local map = vim.api.nvim_buf_set_keymap
@@ -77,6 +77,11 @@ nvim_lsp.dockerls.setup {
   on_attach = on_attach,
   cmd = {"docker-langserver", "--stdio"},
   filetypes = {"dockerfile"}
+}
+
+nvim_lsp.jdtls.setup {
+  on_attach = on_attach,
+  filetypes = {"java"}
 }
 
 EOF
