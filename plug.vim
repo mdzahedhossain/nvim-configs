@@ -24,6 +24,7 @@ if has("nvim")
   " Plug 'ms-jpq/coq.artifacts', { 'branch' : 'artifacts'}
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-neorg/neorg'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'itchyny/lightline.vim'
   Plug 'lewis6991/gitsigns.nvim'
