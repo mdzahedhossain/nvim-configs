@@ -50,6 +50,8 @@ if has("nvim")
 
   " https://github.com/nvim-telescope/telescope-arecibo.nvim
   Plug 'nvim-telescope/telescope-arecibo.nvim'
+  Plug 'rebelot/kanagawa.nvim'
+  Plug 'folke/tokyonight.nvim'
 endif
 
 call plug#end()
